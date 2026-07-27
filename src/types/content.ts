@@ -2,6 +2,9 @@ export type Category = 'Fitness' | 'Nutrition' | 'Health' | 'Science' | 'Food';
 export type EchoStrength = 'direct' | 'thematic';
 export type Difficulty = 'easy' | 'medium' | 'hard';
 
+/** The app is locked to a single translation app-wide — see docs/prayfit-trivia-content-engine-prompt.md. */
+export type Translation = 'NIV';
+
 /** Raw shape as produced by the content-generation prompt / JSON seed files. */
 export interface RawQuestion {
   category: Category;
@@ -13,6 +16,7 @@ export interface RawQuestion {
   echo_word: string;
   echo_strength: EchoStrength;
   difficulty: Difficulty;
+  translation: Translation;
 }
 
 /** Question with a stable id assigned once loaded into the app. */

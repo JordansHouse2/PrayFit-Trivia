@@ -4,11 +4,12 @@
     "question": "The incline dumbbell curl primarily targets the ______ head of the biceps.",
     "options": ["Long", "Short"],
     "correct_answer": "Long",
-    "verse_reference": "Galatians 5:22",
-    "verse_text": "But the fruit of the Spirit is love, joy, peace, longsuffering, gentleness, goodness, faith,",
-    "echo_word": "long",
+    "verse_reference": "Psalm 91:16",
+    "verse_text": "With long life I will satisfy him and show him my salvation.",
+    "echo_word": "long life",
     "echo_strength": "direct",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "translation": "NIV"
   },
   {
     "category": "Fitness",
@@ -16,10 +17,11 @@
     "options": ["Still", "Moving"],
     "correct_answer": "Still",
     "verse_reference": "Psalm 46:10",
-    "verse_text": "Be still, and know that I am God.",
+    "verse_text": "He says, \"Be still, and know that I am God; I will be exalted among the nations, I will be exalted in the earth.\"",
     "echo_word": "still",
     "echo_strength": "direct",
-    "difficulty": "easy"
+    "difficulty": "easy",
+    "translation": "NIV"
   },
   {
     "category": "Fitness",
@@ -27,10 +29,11 @@
     "options": ["Back", "Front"],
     "correct_answer": "Back",
     "verse_reference": "Philippians 3:13",
-    "verse_text": "Brethren, I count not myself to have apprehended: but this one thing I do, forgetting those things which are behind, and reaching forth unto those things which are before,",
+    "verse_text": "Brothers and sisters, I do not consider myself yet to have taken hold of it. But one thing I do: Forgetting what is behind and straining toward what is ahead,",
     "echo_word": "behind",
     "echo_strength": "direct",
-    "difficulty": "easy"
+    "difficulty": "easy",
+    "translation": "NIV"
   },
   {
     "category": "Fitness",
@@ -38,10 +41,11 @@
     "options": ["Failure", "Rest"],
     "correct_answer": "Failure",
     "verse_reference": "2 Corinthians 4:8-9",
-    "verse_text": "We are troubled on every side, yet not distressed; we are perplexed, but not in despair; Persecuted, but not forsaken; cast down, but not destroyed;",
-    "echo_word": "cast down / not destroyed",
+    "verse_text": "We are hard pressed on every side, but not crushed; perplexed, but not in despair; persecuted, but not abandoned; struck down, but not destroyed.",
+    "echo_word": "struck down, but not destroyed",
     "echo_strength": "thematic",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "translation": "NIV"
   },
   {
     "category": "Fitness",
@@ -49,10 +53,11 @@
     "options": ["Progressive", "Passive"],
     "correct_answer": "Progressive",
     "verse_reference": "Philippians 1:6",
-    "verse_text": "Being confident of this very thing, that he which hath begun a good work in you will perform it until the day of Jesus Christ:",
-    "echo_word": "begun...will perform (ongoing growth)",
+    "verse_text": "being confident of this, that he who began a good work in you will carry it on to completion until the day of Christ Jesus.",
+    "echo_word": "began...carry it on to completion (ongoing growth)",
     "echo_strength": "thematic",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "translation": "NIV"
   },
   {
     "category": "Fitness",
@@ -60,10 +65,11 @@
     "options": ["Rest", "Repetition"],
     "correct_answer": "Rest",
     "verse_reference": "Exodus 20:10",
-    "verse_text": "But the seventh day is the sabbath of the LORD thy God: in it thou shalt not do any work...",
+    "verse_text": "but the seventh day is a sabbath to the LORD your God. On it you shall not do any work...",
     "echo_word": "sabbath / rest",
     "echo_strength": "direct",
-    "difficulty": "easy"
+    "difficulty": "easy",
+    "translation": "NIV"
   },
   {
     "category": "Fitness",
@@ -71,10 +77,11 @@
     "options": ["Calisthenic", "Isolation"],
     "correct_answer": "Calisthenic",
     "verse_reference": "1 Timothy 4:8",
-    "verse_text": "For bodily exercise profiteth little: but godliness is profitable unto all things...",
-    "echo_word": "bodily exercise",
-    "echo_strength": "direct",
-    "difficulty": "hard"
+    "verse_text": "For physical training is of some value, but godliness has value for all things, holding promise for both the present life and the life to come.",
+    "echo_word": "physical training",
+    "echo_strength": "thematic",
+    "difficulty": "hard",
+    "translation": "NIV"
   },
   {
     "category": "Fitness",
@@ -82,22 +89,24 @@
     "options": ["Aerobic", "Anaerobic"],
     "correct_answer": "Aerobic",
     "verse_reference": "Hebrews 12:1",
-    "verse_text": "...let us run with patience the race that is set before us,",
+    "verse_text": "...let us run with perseverance the race marked out for us,",
     "echo_word": "run...race (endurance)",
     "echo_strength": "thematic",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "translation": "NIV"
   },
 
   {
     "category": "Nutrition",
-    "question": "This macronutrient, called \"the ______,\" provides 9 calories per gram \u2014 more than double protein or carbs.",
+    "question": "This macronutrient, called \"the ______,\" provides 9 calories per gram — more than double protein or carbs.",
     "options": ["Fat", "Protein", "Carbohydrate"],
     "correct_answer": "Fat",
     "verse_reference": "Genesis 4:4",
-    "verse_text": "And Abel, he also brought of the firstlings of his flock and of the fat thereof...",
+    "verse_text": "And Abel also brought an offering—fat portions from some of the firstborn of his flock. The Lord looked with favor on Abel and his offering,",
     "echo_word": "fat",
     "echo_strength": "direct",
-    "difficulty": "easy"
+    "difficulty": "easy",
+    "translation": "NIV"
   },
   {
     "category": "Nutrition",
@@ -105,10 +114,11 @@
     "options": ["Rock", "Liquid", "Gas"],
     "correct_answer": "Rock",
     "verse_reference": "Psalm 18:2",
-    "verse_text": "The LORD is my rock, and my fortress, and my deliverer...",
+    "verse_text": "The LORD is my rock, my fortress and my deliverer; my God is my rock, in whom I take refuge, my shield and the horn of my salvation, my stronghold.",
     "echo_word": "rock",
     "echo_strength": "direct",
-    "difficulty": "easy"
+    "difficulty": "easy",
+    "translation": "NIV"
   },
   {
     "category": "Nutrition",
@@ -116,10 +126,11 @@
     "options": ["Sun", "Moon", "Star"],
     "correct_answer": "Sun",
     "verse_reference": "Malachi 4:2",
-    "verse_text": "But unto you that fear my name shall the Sun of righteousness arise with healing in his wings...",
+    "verse_text": "But for you who revere my name, the sun of righteousness will rise with healing in its rays...",
     "echo_word": "sun",
     "echo_strength": "direct",
-    "difficulty": "easy"
+    "difficulty": "easy",
+    "translation": "NIV"
   },
   {
     "category": "Nutrition",
@@ -127,10 +138,11 @@
     "options": ["Deficient", "Balanced"],
     "correct_answer": "Deficient",
     "verse_reference": "Genesis 1:2",
-    "verse_text": "And the earth was without form, and void...",
-    "echo_word": "void / empty",
+    "verse_text": "Now the earth was formless and empty, darkness was over the surface of the deep, and the Spirit of God was hovering over the waters.",
+    "echo_word": "empty",
     "echo_strength": "thematic",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "translation": "NIV"
   },
   {
     "category": "Nutrition",
@@ -138,10 +150,11 @@
     "options": ["Bran", "Sugar"],
     "correct_answer": "Bran",
     "verse_reference": "Ruth 2:14",
-    "verse_text": "...and dip thy morsel in the vinegar... and she did eat, and was sufficed, and left.",
-    "echo_word": "morsel / grain (thematic to whole-food eating)",
+    "verse_text": "At mealtime Boaz said to her, \"Come over here. Have some bread and dip it in the wine vinegar.\" When she sat down with the harvesters, he offered her some roasted grain. She ate all she wanted and had some left over.",
+    "echo_word": "roasted grain",
     "echo_strength": "thematic",
-    "difficulty": "hard"
+    "difficulty": "hard",
+    "translation": "NIV"
   },
   {
     "category": "Nutrition",
@@ -149,10 +162,11 @@
     "options": ["Sugar", "Protein"],
     "correct_answer": "Sugar",
     "verse_reference": "Judges 14:18",
-    "verse_text": "...What is sweeter than honey?...",
-    "echo_word": "sweet / honey",
+    "verse_text": "...\"What is sweeter than honey? What is stronger than a lion?\"...",
+    "echo_word": "sweeter than honey",
     "echo_strength": "direct",
-    "difficulty": "easy"
+    "difficulty": "easy",
+    "translation": "NIV"
   },
   {
     "category": "Nutrition",
@@ -160,10 +174,11 @@
     "options": ["Regularly", "Slowly"],
     "correct_answer": "Regularly",
     "verse_reference": "Ecclesiastes 3:1",
-    "verse_text": "To every thing there is a season, and a time to every purpose under the heaven:",
-    "echo_word": "season / time (rhythm, regularity)",
+    "verse_text": "There is a time for everything, and a season for every activity under the heavens:",
+    "echo_word": "time...season (rhythm, regularity)",
     "echo_strength": "thematic",
-    "difficulty": "hard"
+    "difficulty": "hard",
+    "translation": "NIV"
   },
   {
     "category": "Nutrition",
@@ -171,22 +186,24 @@
     "options": ["Unleavened", "Sourdough"],
     "correct_answer": "Unleavened",
     "verse_reference": "Exodus 12:8",
-    "verse_text": "And they shall eat the flesh in that night, roast with fire, and unleavened bread...",
-    "echo_word": "unleavened",
-    "echo_strength": "direct",
-    "difficulty": "medium"
+    "verse_text": "That same night they are to eat the meat roasted over the fire, along with bitter herbs, and bread made without yeast.",
+    "echo_word": "bread made without yeast",
+    "echo_strength": "thematic",
+    "difficulty": "medium",
+    "translation": "NIV"
   },
 
   {
     "category": "Health",
-    "question": "In the King James Bible, the kidneys are referred to by which old English word?",
-    "options": ["Reins", "Loins", "Vitals"],
-    "correct_answer": "Reins",
-    "verse_reference": "Psalm 26:2",
-    "verse_text": "Examine me, O LORD, and prove me; try my reins and my heart.",
-    "echo_word": "reins",
+    "question": "Leviticus's instructions for sacrifice describe removing the fat from two ______, the organs that filter waste from the blood.",
+    "options": ["Kidneys", "Liver"],
+    "correct_answer": "Kidneys",
+    "verse_reference": "Leviticus 3:4",
+    "verse_text": "both kidneys with the fat on them near the loins, and the long lobe of the liver, which you will remove with the kidneys.",
+    "echo_word": "kidneys",
     "echo_strength": "direct",
-    "difficulty": "hard"
+    "difficulty": "medium",
+    "translation": "NIV"
   },
   {
     "category": "Health",
@@ -194,21 +211,23 @@
     "options": ["Heart", "Lungs", "Stomach"],
     "correct_answer": "Heart",
     "verse_reference": "Proverbs 4:23",
-    "verse_text": "Keep thy heart with all diligence; for out of it are the issues of life.",
+    "verse_text": "Above all else, guard your heart, for everything you do flows from it.",
     "echo_word": "heart",
     "echo_strength": "direct",
-    "difficulty": "easy"
+    "difficulty": "easy",
+    "translation": "NIV"
   },
   {
     "category": "Health",
-    "question": "Which part of a plant, described in Ezekiel as being \"for medicine,\" is often the most nutrient-dense part we eat?",
+    "question": "Which part of a plant, described in Ezekiel as being \"for healing,\" is often the most nutrient-dense part we eat?",
     "options": ["The leaf", "The root", "The stem"],
     "correct_answer": "The leaf",
     "verse_reference": "Ezekiel 47:12",
-    "verse_text": "...and the leaf thereof for medicine.",
-    "echo_word": "leaf",
+    "verse_text": "...Their fruit will serve for food and their leaves for healing.",
+    "echo_word": "leaves",
     "echo_strength": "direct",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "translation": "NIV"
   },
   {
     "category": "Health",
@@ -216,10 +235,11 @@
     "options": ["Chronic", "Acute"],
     "correct_answer": "Chronic",
     "verse_reference": "Isaiah 1:6",
-    "verse_text": "...wounds, and bruises, and putrifying sores: they have not been closed, neither bound up...",
-    "echo_word": "not closed / not bound up (unhealed, ongoing)",
+    "verse_text": "From the sole of your foot to the top of your head there is no soundness—only wounds and welts and open sores, not cleansed or bandaged or soothed with olive oil.",
+    "echo_word": "not cleansed or bandaged",
     "echo_strength": "thematic",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "translation": "NIV"
   },
   {
     "category": "Health",
@@ -227,10 +247,11 @@
     "options": ["Leprosy", "Eczema"],
     "correct_answer": "Leprosy",
     "verse_reference": "Leviticus 13:3",
-    "verse_text": "...it is a plague of leprosy...",
-    "echo_word": "leprosy",
-    "echo_strength": "direct",
-    "difficulty": "easy"
+    "verse_text": "The priest is to examine the sore on the skin, and if the hair in the sore has turned white and the sore appears to be more than skin deep, it is a defiling skin disease...",
+    "echo_word": "defiling skin disease",
+    "echo_strength": "thematic",
+    "difficulty": "medium",
+    "translation": "NIV"
   },
   {
     "category": "Health",
@@ -238,10 +259,11 @@
     "options": ["Holistic", "Emergency"],
     "correct_answer": "Holistic",
     "verse_reference": "3 John 1:2",
-    "verse_text": "Beloved, I wish above all things that thou mayest prosper and be in health, even as thy soul prospereth.",
-    "echo_word": "prosper...soul...health (whole-person)",
+    "verse_text": "Dear friend, I pray that you may enjoy good health and that all may go well with you, even as your soul is getting along well.",
+    "echo_word": "good health...soul is getting along well (whole-person)",
     "echo_strength": "thematic",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "translation": "NIV"
   },
   {
     "category": "Health",
@@ -249,21 +271,23 @@
     "options": ["Recovery", "Diagnosis"],
     "correct_answer": "Recovery",
     "verse_reference": "Jeremiah 30:17",
-    "verse_text": "For I will restore health unto thee, and I will heal thee of thy wounds, saith the LORD...",
-    "echo_word": "restore health",
+    "verse_text": "But I will restore you to health and heal your wounds,' declares the LORD...",
+    "echo_word": "restore...to health",
     "echo_strength": "direct",
-    "difficulty": "easy"
+    "difficulty": "easy",
+    "translation": "NIV"
   },
   {
     "category": "Health",
-    "question": "The body's natural response to injury \u2014 redness, heat, and swelling \u2014 is called ______.",
+    "question": "The body's natural response to injury — redness, heat, and swelling — is called ______.",
     "options": ["Inflammation", "Infection"],
     "correct_answer": "Inflammation",
     "verse_reference": "Numbers 11:1",
-    "verse_text": "...and the fire of the LORD burnt among them...",
-    "echo_word": "fire / burnt (heat response)",
+    "verse_text": "...Then fire from the LORD burned among them and consumed some of the outskirts of the camp.",
+    "echo_word": "fire...burned",
     "echo_strength": "thematic",
-    "difficulty": "hard"
+    "difficulty": "hard",
+    "translation": "NIV"
   },
 
   {
@@ -272,10 +296,11 @@
     "options": ["Powerhouse", "Brain", "Outer portion"],
     "correct_answer": "Powerhouse",
     "verse_reference": "Acts 1:8",
-    "verse_text": "But ye shall receive power, after that the Holy Ghost is come upon you...",
+    "verse_text": "But you will receive power when the Holy Spirit comes on you...",
     "echo_word": "power",
     "echo_strength": "direct",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "translation": "NIV"
   },
   {
     "category": "Science",
@@ -283,10 +308,11 @@
     "options": ["Given", "Received"],
     "correct_answer": "Given",
     "verse_reference": "Acts 20:35",
-    "verse_text": "...It is more blessed to give than to receive.",
+    "verse_text": "...'It is more blessed to give than to receive.'",
     "echo_word": "give",
     "echo_strength": "direct",
-    "difficulty": "easy"
+    "difficulty": "easy",
+    "translation": "NIV"
   },
   {
     "category": "Science",
@@ -294,10 +320,11 @@
     "options": ["Photosynthesis", "Respiration"],
     "correct_answer": "Photosynthesis",
     "verse_reference": "Genesis 1:11",
-    "verse_text": "And God said, Let the earth bring forth grass, the herb yielding seed, and the fruit tree yielding fruit after his kind...",
-    "echo_word": "bring forth / yielding (growth from light)",
+    "verse_text": "Then God said, \"Let the land produce vegetation: seed-bearing plants and trees on the land that bear fruit with seed in it, according to their various kinds.\"",
+    "echo_word": "produce...bear fruit with seed (growth)",
     "echo_strength": "thematic",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "translation": "NIV"
   },
   {
     "category": "Science",
@@ -305,10 +332,11 @@
     "options": ["Gene", "Cell"],
     "correct_answer": "Gene",
     "verse_reference": "Genesis 5:3",
-    "verse_text": "...and begat a son in his own likeness, after his image...",
-    "echo_word": "likeness / image (inherited traits)",
+    "verse_text": "When Adam had lived 130 years, he had a son in his own likeness, in his own image; and he named him Seth.",
+    "echo_word": "likeness...image (inherited traits)",
     "echo_strength": "thematic",
-    "difficulty": "hard"
+    "difficulty": "hard",
+    "translation": "NIV"
   },
   {
     "category": "Science",
@@ -316,10 +344,11 @@
     "options": ["Gravity", "Momentum"],
     "correct_answer": "Gravity",
     "verse_reference": "Job 38:31",
-    "verse_text": "Canst thou bind the sweet influences of Pleiades, or loose the bands of Orion?",
-    "echo_word": "bind...bands (cosmic forces)",
+    "verse_text": "Can you bind the chains of the Pleiades? Can you loosen Orion's belt?",
+    "echo_word": "bind the chains...loosen (cosmic forces)",
     "echo_strength": "thematic",
-    "difficulty": "hard"
+    "difficulty": "hard",
+    "translation": "NIV"
   },
   {
     "category": "Science",
@@ -327,10 +356,11 @@
     "options": ["Ice", "Steam"],
     "correct_answer": "Ice",
     "verse_reference": "Job 38:29",
-    "verse_text": "Out of whose womb came the ice? and the hoary frost of heaven, who hath gendered it?",
+    "verse_text": "From whose womb comes the ice? Who gives birth to the frost from the heavens",
     "echo_word": "ice",
     "echo_strength": "direct",
-    "difficulty": "easy"
+    "difficulty": "easy",
+    "translation": "NIV"
   },
   {
     "category": "Science",
@@ -338,10 +368,11 @@
     "options": ["Atmosphere", "Crust"],
     "correct_answer": "Atmosphere",
     "verse_reference": "Genesis 1:6",
-    "verse_text": "And God said, Let there be a firmament in the midst of the waters...",
-    "echo_word": "firmament (the sky/atmosphere)",
-    "echo_strength": "direct",
-    "difficulty": "medium"
+    "verse_text": "And God said, \"Let there be a vault between the waters to separate water from water.\"",
+    "echo_word": "vault between the waters (the sky)",
+    "echo_strength": "thematic",
+    "difficulty": "medium",
+    "translation": "NIV"
   },
   {
     "category": "Science",
@@ -349,10 +380,11 @@
     "options": ["Skin", "Liver"],
     "correct_answer": "Skin",
     "verse_reference": "Job 2:4",
-    "verse_text": "...Skin for skin, yea, all that a man hath will he give for his life.",
+    "verse_text": "\"Skin for skin!\" Satan replied. \"A man will give all he has for his own life.\"",
     "echo_word": "skin",
     "echo_strength": "direct",
-    "difficulty": "easy"
+    "difficulty": "easy",
+    "translation": "NIV"
   },
 
   {
@@ -361,10 +393,11 @@
     "options": ["Fish", "Chicken"],
     "correct_answer": "Fish",
     "verse_reference": "Luke 5:6",
-    "verse_text": "And when they had this done, they inclosed a great multitude of fishes...",
-    "echo_word": "fishes",
+    "verse_text": "When they had done so, they caught such a large number of fish that their nets began to break.",
+    "echo_word": "fish",
     "echo_strength": "direct",
-    "difficulty": "easy"
+    "difficulty": "easy",
+    "translation": "NIV"
   },
   {
     "category": "Food",
@@ -372,10 +405,11 @@
     "options": ["The root", "The leaf", "The stem"],
     "correct_answer": "The root",
     "verse_reference": "Isaiah 53:2",
-    "verse_text": "For he shall grow up before him as a tender plant, and as a root out of a dry ground...",
+    "verse_text": "He grew up before him like a tender shoot, and like a root out of dry ground...",
     "echo_word": "root",
     "echo_strength": "direct",
-    "difficulty": "easy"
+    "difficulty": "easy",
+    "translation": "NIV"
   },
   {
     "category": "Food",
@@ -383,10 +417,11 @@
     "options": ["Brain", "Muscle"],
     "correct_answer": "Brain",
     "verse_reference": "Romans 12:2",
-    "verse_text": "...be ye transformed by the renewing of your mind...",
+    "verse_text": "...be transformed by the renewing of your mind...",
     "echo_word": "mind (brain function)",
     "echo_strength": "thematic",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "translation": "NIV"
   },
   {
     "category": "Food",
@@ -394,10 +429,11 @@
     "options": ["Red", "Blue", "Clear"],
     "correct_answer": "Red",
     "verse_reference": "2 Kings 3:22",
-    "verse_text": "...and the sun shone upon the water, and the Moabites saw the water on the other side as red as blood:",
-    "echo_word": "red as blood",
+    "verse_text": "...the sun was shining on the water. To the Moabites across the way, the water looked red—like blood.",
+    "echo_word": "red...like blood",
     "echo_strength": "direct",
-    "difficulty": "easy"
+    "difficulty": "easy",
+    "translation": "NIV"
   },
   {
     "category": "Food",
@@ -405,10 +441,11 @@
     "options": ["Monounsaturated", "Trans"],
     "correct_answer": "Monounsaturated",
     "verse_reference": "Deuteronomy 8:8",
-    "verse_text": "A land of wheat, and barley, and vines, and fig trees, and pomegranates; a land of oil olive, and honey;",
-    "echo_word": "oil olive",
+    "verse_text": "a land with wheat and barley, vines and fig trees, pomegranates, olive oil and honey,",
+    "echo_word": "olive oil",
     "echo_strength": "direct",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "translation": "NIV"
   },
   {
     "category": "Food",
@@ -416,21 +453,23 @@
     "options": ["Raisins", "Prunes"],
     "correct_answer": "Raisins",
     "verse_reference": "1 Samuel 25:18",
-    "verse_text": "...and an hundred clusters of raisins, and two hundred cakes of figs...",
+    "verse_text": "...a hundred cakes of raisins and two hundred cakes of pressed figs, and loaded them on donkeys.",
     "echo_word": "raisins",
     "echo_strength": "direct",
-    "difficulty": "easy"
+    "difficulty": "easy",
+    "translation": "NIV"
   },
   {
     "category": "Food",
-    "question": "Locusts, mentioned in scripture as a food source, are actually a type of ______ \u2014 a high-protein food many cultures still eat.",
+    "question": "Locusts, mentioned in scripture as a food source, are actually a type of ______ — a high-protein food many cultures still eat.",
     "options": ["Insect", "Grain"],
     "correct_answer": "Insect",
     "verse_reference": "Matthew 3:4",
-    "verse_text": "...and his meat was locusts and wild honey.",
+    "verse_text": "John's clothes were made of camel's hair, and he had a leather belt around his waist. His food was locusts and wild honey.",
     "echo_word": "locusts",
     "echo_strength": "direct",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "translation": "NIV"
   },
   {
     "category": "Food",
@@ -440,7 +479,8 @@
     "verse_reference": "Exodus 3:8",
     "verse_text": "...a land flowing with milk and honey...",
     "echo_word": "milk",
-    "echo_strength": "direct",
-    "difficulty": "easy"
+    "echo_strength": "thematic",
+    "difficulty": "medium",
+    "translation": "NIV"
   }
 ]

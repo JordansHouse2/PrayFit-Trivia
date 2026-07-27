@@ -5,6 +5,7 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 
 import { ThemedText } from '@/components/themed-text';
 import { ThemedView } from '@/components/themed-view';
+import { NIV_ATTRIBUTION } from '@/constants/attribution';
 import { Spacing } from '@/constants/theme';
 import { useTheme } from '@/hooks/use-theme';
 import { todayKey } from '@/lib/random';
@@ -63,6 +64,10 @@ export default function HomeScreen() {
             {completedToday ? 'See you tomorrow' : "Start Today's 5"}
           </ThemedText>
         </Pressable>
+
+        <ThemedText type="small" themeColor="textSecondary" style={styles.attribution}>
+          {NIV_ATTRIBUTION}
+        </ThemedText>
       </SafeAreaView>
     </ThemedView>
   );
@@ -101,5 +106,10 @@ const styles = StyleSheet.create({
     borderRadius: 14,
     paddingVertical: 16,
     alignItems: 'center',
+  },
+  attribution: {
+    textAlign: 'center',
+    fontSize: 11,
+    lineHeight: 15,
   },
 });
