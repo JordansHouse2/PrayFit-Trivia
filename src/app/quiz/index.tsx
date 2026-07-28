@@ -10,6 +10,7 @@ import { VerseCandidateCard } from '@/components/quiz/verse-candidate-card';
 import { ThemedText } from '@/components/themed-text';
 import { ThemedView } from '@/components/themed-view';
 import { useTheme } from '@/hooks/use-theme';
+import { recordVerseEngagements } from '@/lib/bibleProgress';
 import { todayKey } from '@/lib/random';
 import { recordDailyCompletion } from '@/lib/streak';
 import { Spacing } from '@/constants/theme';
@@ -45,11 +46,15 @@ export default function QuizScreen() {
 
   useEffect(() => {
     if (status === 'complete' && dayKey) {
-      recordDailyCompletion(dayKey).finally(() => {
+      const entries = questions.map((q) => {
+        const result = results.find((r) => r.questionId === q.id);
+        return { reference: q.verse_reference, wasRead: result?.chapterRead ?? false };
+      });
+      Promise.all([recordDailyCompletion(dayKey), recordVerseEngagements(entries)]).finally(() => {
         router.replace('/quiz/results');
       });
     }
-  }, [status, dayKey, router]);
+  }, [status, dayKey, router, questions, results]);
 
   if (status === 'idle' || questions.length === 0) {
     return (

@@ -24,6 +24,7 @@ export default function RootLayout() {
     <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
       <Stack screenOptions={{ headerShown: false }}>
         <Stack.Screen name="index" />
+        <Stack.Screen name="progress" />
         <Stack.Screen name="quiz/index" options={{ gestureEnabled: false }} />
         <Stack.Screen name="quiz/results" options={{ gestureEnabled: false }} />
       </Stack>

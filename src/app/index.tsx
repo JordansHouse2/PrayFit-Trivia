@@ -8,7 +8,9 @@ import { ThemedText } from '@/components/themed-text';
 import { ThemedView } from '@/components/themed-view';
 import { NIV_ATTRIBUTION } from '@/constants/attribution';
 import { Spacing } from '@/constants/theme';
+import { TOTAL_CHAPTERS } from '@/data/bible-books';
 import { useTheme } from '@/hooks/use-theme';
+import { getProgressState, summarizeProgress, type ProgressSummary } from '@/lib/bibleProgress';
 import { todayKey } from '@/lib/random';
 import { getStreakState, type StreakState } from '@/lib/streak';
 
@@ -17,6 +19,7 @@ export default function HomeScreen() {
   const theme = useTheme();
   const [streak, setStreak] = useState<StreakState | null>(null);
   const [completedToday, setCompletedToday] = useState(false);
+  const [progressSummary, setProgressSummary] = useState<ProgressSummary | null>(null);
 
   useFocusEffect(
     useCallback(() => {
@@ -24,6 +27,7 @@ export default function HomeScreen() {
         setStreak(state);
         setCompletedToday(state.lastCompletedDate === todayKey());
       });
+      getProgressState().then((state) => setProgressSummary(summarizeProgress(state)));
     }, []),
   );
 
@@ -51,12 +55,16 @@ export default function HomeScreen() {
           </ThemedText>
         </ThemedView>
 
-        <ThemedView type="backgroundElement" style={styles.progressPreview}>
-          <ThemedText type="smallBold">Bible Progress Tracker</ThemedText>
-          <ThemedText type="small" themeColor="textSecondary">
-            Coming in a later build — this'll show your 66-book reading map.
-          </ThemedText>
-        </ThemedView>
+        <Pressable onPress={() => router.push('/progress')}>
+          <ThemedView type="backgroundElement" style={styles.progressPreview}>
+            <ThemedText type="smallBold">Bible Progress Tracker</ThemedText>
+            <ThemedText type="small" themeColor="textSecondary">
+              {progressSummary
+                ? `${progressSummary.booksTouchedCount}/66 books · ${progressSummary.totalChaptersTouched}/${TOTAL_CHAPTERS} chapters touched`
+                : 'Loading...'}
+            </ThemedText>
+          </ThemedView>
+        </Pressable>
 
         <Pressable
           onPress={() => router.push('/quiz')}
