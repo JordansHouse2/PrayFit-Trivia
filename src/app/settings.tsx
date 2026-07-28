@@ -7,6 +7,7 @@ import { ThemedText } from '@/components/themed-text';
 import { ThemedView } from '@/components/themed-view';
 import { Spacing } from '@/constants/theme';
 import { useTheme } from '@/hooks/use-theme';
+import { signOut } from '@/lib/auth';
 import {
   DEFAULT_NOTIFICATION_SETTINGS,
   getNotificationSettings,
@@ -14,6 +15,8 @@ import {
   type NotificationSettings,
 } from '@/lib/notificationSettings';
 import { cancelDailyReminder, requestNotificationPermissions, scheduleDailyReminder } from '@/lib/notifications';
+import { isSupabaseConfigured } from '@/lib/supabase';
+import { useAuthSession } from '@/store/authSession';
 
 const TIME_PRESETS: { label: string; hour: number; minute: number }[] = [
   { label: '6:00 AM', hour: 6, minute: 0 },
@@ -28,6 +31,7 @@ export default function SettingsScreen() {
   const router = useRouter();
   const theme = useTheme();
   const [settings, setSettingsState] = useState<NotificationSettings>(DEFAULT_NOTIFICATION_SETTINGS);
+  const session = useAuthSession((s) => s.session);
 
   useFocusEffect(
     useCallback(() => {
@@ -109,6 +113,35 @@ export default function SettingsScreen() {
               </View>
             )}
           </ThemedView>
+
+          {isSupabaseConfigured && (
+            <ThemedView type="backgroundElement" style={styles.section}>
+              <ThemedText type="default">Account</ThemedText>
+              {session ? (
+                <>
+                  <ThemedText type="small" themeColor="textSecondary">
+                    Signed in as {session.user.email}
+                  </ThemedText>
+                  <Pressable onPress={() => signOut()}>
+                    <ThemedText type="linkPrimary" themeColor="danger">
+                      Sign Out
+                    </ThemedText>
+                  </Pressable>
+                </>
+              ) : (
+                <>
+                  <ThemedText type="small" themeColor="textSecondary">
+                    Sign in to sync your streak and Bible progress across devices.
+                  </ThemedText>
+                  <Pressable onPress={() => router.push('/account')}>
+                    <ThemedText type="linkPrimary" themeColor="primary">
+                      Sign In / Create Account
+                    </ThemedText>
+                  </Pressable>
+                </>
+              )}
+            </ThemedView>
+          )}
         </View>
       </SafeAreaView>
     </ThemedView>

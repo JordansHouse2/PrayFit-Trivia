@@ -28,6 +28,12 @@ export default function OnboardingNotificationsScreen() {
 
   const finish = async () => {
     await setOnboardingComplete();
+    // '/' was replaced away (not pushed under) when onboarding started, so
+    // it no longer exists in the stack for dismissTo to find — it would
+    // silently fall back to a plain replace, stranding the Welcome screen
+    // underneath. Pop to the stack's bottom (Welcome) first, then swap it
+    // for Home, so nothing from onboarding is left mounted.
+    router.dismissAll();
     router.replace('/');
   };
 

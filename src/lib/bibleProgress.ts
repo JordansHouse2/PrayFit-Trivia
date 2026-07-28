@@ -27,6 +27,11 @@ async function persist(state: ProgressState): Promise<void> {
   await AsyncStorage.setItem(STORAGE_KEY, JSON.stringify(state));
 }
 
+/** Overwrites local progress state wholesale — used to write a merged (local ∪ remote) result back down. */
+export async function setProgressState(state: ProgressState): Promise<void> {
+  await persist(state);
+}
+
 function applyEngagement(state: ProgressState, reference: string, wasRead: boolean): void {
   const parsed = parseVerseReference(reference);
   if (!parsed) return;

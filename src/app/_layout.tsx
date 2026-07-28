@@ -5,6 +5,7 @@ import { useEffect } from 'react';
 import { useColorScheme } from 'react-native';
 
 import { configureNotificationHandler } from '@/lib/notifications';
+import { useAuthSession } from '@/store/authSession';
 
 SplashScreen.preventAutoHideAsync();
 configureNotificationHandler();
@@ -12,6 +13,11 @@ configureNotificationHandler();
 export default function RootLayout() {
   const colorScheme = useColorScheme();
   const [fontsLoaded] = useFonts({ Anton_400Regular });
+  const initAuth = useAuthSession((s) => s.init);
+
+  useEffect(() => {
+    initAuth();
+  }, [initAuth]);
 
   useEffect(() => {
     if (fontsLoaded) {
@@ -29,6 +35,7 @@ export default function RootLayout() {
         <Stack.Screen name="index" />
         <Stack.Screen name="progress" />
         <Stack.Screen name="settings" />
+        <Stack.Screen name="account" />
         <Stack.Screen name="onboarding/welcome" options={{ gestureEnabled: false }} />
         <Stack.Screen name="onboarding/notifications" options={{ gestureEnabled: false }} />
         <Stack.Screen name="quiz/index" options={{ gestureEnabled: false }} />

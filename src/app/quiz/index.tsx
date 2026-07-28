@@ -15,12 +15,15 @@ import { MILESTONES } from '@/lib/milestones';
 import { cancelStreakRiskNotification, presentMilestoneNotification, scheduleReengagementReminder } from '@/lib/notifications';
 import { todayKey } from '@/lib/random';
 import { recordDailyCompletion } from '@/lib/streak';
+import { pushBibleProgressToRemote, pushQuizCompletion, pushStreakToRemote, pushVerseEncounters } from '@/lib/sync';
 import { Spacing } from '@/constants/theme';
+import { useAuthSession } from '@/store/authSession';
 import { useQuizSession } from '@/store/quizSession';
 
 export default function QuizScreen() {
   const router = useRouter();
   const theme = useTheme();
+  const userId = useAuthSession((s) => s.session?.user.id);
 
   const {
     dayKey,
@@ -67,6 +70,31 @@ export default function QuizScreen() {
       await scheduleReengagementReminder();
       for (const milestone of newlyUnlocked) {
         await presentMilestoneNotification(milestone.label);
+      }
+
+      if (userId) {
+        const score = results.filter((r) => r.isAnswerCorrect).length;
+        const points = results.reduce((sum, r) => sum + r.pointsEarned, 0);
+        await Promise.all([
+          pushStreakToRemote(userId),
+          pushBibleProgressToRemote(userId),
+          pushQuizCompletion(userId, { dayKey, score, points }),
+          pushVerseEncounters(
+            userId,
+            questions.map((q) => {
+              const result = results.find((r) => r.questionId === q.id);
+              return {
+                questionId: undefined,
+                category: q.category,
+                verseReference: q.verse_reference,
+                verseText: q.verse_text,
+                wasRead: result?.chapterRead ?? false,
+              };
+            }),
+          ),
+        ]).catch(() => {
+          // Best-effort: local state (already persisted above) remains the source of truth.
+        });
       }
 
       router.replace('/quiz/results');

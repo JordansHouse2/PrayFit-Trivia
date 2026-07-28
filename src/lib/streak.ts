@@ -105,3 +105,8 @@ export async function hasCompletedToday(today: string): Promise<boolean> {
   const state = await getStreakState();
   return state.lastCompletedDate === today;
 }
+
+/** Overwrites local streak state wholesale — used when pulling a remote record down on sign-in. */
+export async function setStreakState(state: StreakState): Promise<void> {
+  await persist(state);
+}

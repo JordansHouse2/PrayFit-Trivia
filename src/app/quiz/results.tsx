@@ -26,7 +26,9 @@ export default function ResultsScreen() {
 
   const goHome = () => {
     resetSession();
-    router.replace('/');
+    // dismissTo (not replace) so this pops back to the single existing Home
+    // instance instead of stacking a second one underneath it.
+    router.dismissTo('/');
   };
 
   return (
