@@ -10,7 +10,9 @@ import { VerseCandidateCard } from '@/components/quiz/verse-candidate-card';
 import { ThemedText } from '@/components/themed-text';
 import { ThemedView } from '@/components/themed-view';
 import { useTheme } from '@/hooks/use-theme';
-import { recordVerseEngagements } from '@/lib/bibleProgress';
+import { getProgressState, recordVerseEngagements, summarizeProgress } from '@/lib/bibleProgress';
+import { MILESTONES } from '@/lib/milestones';
+import { cancelStreakRiskNotification, presentMilestoneNotification, scheduleReengagementReminder } from '@/lib/notifications';
 import { todayKey } from '@/lib/random';
 import { recordDailyCompletion } from '@/lib/streak';
 import { Spacing } from '@/constants/theme';
@@ -45,15 +47,30 @@ export default function QuizScreen() {
   }, [status, startSession]);
 
   useEffect(() => {
-    if (status === 'complete' && dayKey) {
+    if (status !== 'complete' || !dayKey) return;
+
+    (async () => {
       const entries = questions.map((q) => {
         const result = results.find((r) => r.questionId === q.id);
         return { reference: q.verse_reference, wasRead: result?.chapterRead ?? false };
       });
-      Promise.all([recordDailyCompletion(dayKey), recordVerseEngagements(entries)]).finally(() => {
-        router.replace('/quiz/results');
-      });
-    }
+
+      const beforeSummary = summarizeProgress(await getProgressState());
+      const unlockedBefore = new Set(MILESTONES.filter((m) => m.isUnlocked(beforeSummary)).map((m) => m.id));
+
+      await Promise.all([recordDailyCompletion(dayKey), recordVerseEngagements(entries)]);
+
+      const afterSummary = summarizeProgress(await getProgressState());
+      const newlyUnlocked = MILESTONES.filter((m) => !unlockedBefore.has(m.id) && m.isUnlocked(afterSummary));
+
+      await cancelStreakRiskNotification();
+      await scheduleReengagementReminder();
+      for (const milestone of newlyUnlocked) {
+        await presentMilestoneNotification(milestone.label);
+      }
+
+      router.replace('/quiz/results');
+    })();
   }, [status, dayKey, router, questions, results]);
 
   if (status === 'idle' || questions.length === 0) {

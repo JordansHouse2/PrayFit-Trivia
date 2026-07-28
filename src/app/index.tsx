@@ -1,6 +1,6 @@
 import { useFocusEffect, useRouter } from 'expo-router';
 import { openBrowserAsync } from 'expo-web-browser';
-import { useCallback, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import { Pressable, StyleSheet, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
@@ -12,6 +12,9 @@ import { Spacing } from '@/constants/theme';
 import { TOTAL_CHAPTERS } from '@/data/bible-books';
 import { useTheme } from '@/hooks/use-theme';
 import { getProgressState, summarizeProgress, type ProgressSummary } from '@/lib/bibleProgress';
+import { getNotificationSettings, STREAK_RISK_HOUR, STREAK_RISK_MINUTE } from '@/lib/notificationSettings';
+import { scheduleReengagementReminder, syncStreakRiskNotification } from '@/lib/notifications';
+import { getOnboardingComplete } from '@/lib/onboarding';
 import { todayKey } from '@/lib/random';
 import { getStreakState, type StreakState } from '@/lib/streak';
 
@@ -20,32 +23,66 @@ const DONATE_URL = 'https://www.prayfit.org/?form=donate';
 export default function HomeScreen() {
   const router = useRouter();
   const theme = useTheme();
+  const [onboardingChecked, setOnboardingChecked] = useState(false);
   const [streak, setStreak] = useState<StreakState | null>(null);
   const [completedToday, setCompletedToday] = useState(false);
   const [progressSummary, setProgressSummary] = useState<ProgressSummary | null>(null);
 
+  useEffect(() => {
+    getOnboardingComplete().then((done) => {
+      if (!done) {
+        router.replace('/onboarding/welcome');
+      } else {
+        setOnboardingChecked(true);
+      }
+    });
+  }, [router]);
+
   useFocusEffect(
     useCallback(() => {
+      if (!onboardingChecked) return;
+
       getStreakState().then((state) => {
         setStreak(state);
-        setCompletedToday(state.lastCompletedDate === todayKey());
+        const isCompletedToday = state.lastCompletedDate === todayKey();
+        setCompletedToday(isCompletedToday);
+
+        getNotificationSettings().then((settings) => {
+          syncStreakRiskNotification({
+            enabled: settings.enabled,
+            streakCount: state.count,
+            completedToday: isCompletedToday,
+            hour: STREAK_RISK_HOUR,
+            minute: STREAK_RISK_MINUTE,
+          });
+        });
       });
       getProgressState().then((state) => setProgressSummary(summarizeProgress(state)));
-    }, []),
+      scheduleReengagementReminder();
+    }, [onboardingChecked]),
   );
+
+  if (!onboardingChecked) {
+    return <ThemedView style={styles.container} />;
+  }
 
   return (
     <ThemedView style={styles.container}>
       <SafeAreaView style={styles.safeArea}>
         <View style={styles.headerRow}>
           <BrandMark size={44} />
-          <Pressable
-            onPress={() => openBrowserAsync(DONATE_URL)}
-            style={[styles.donateButton, { backgroundColor: theme.backgroundElement, borderColor: theme.border }]}>
-            <ThemedText type="smallBold" themeColor="primary">
-              🤍 Donate
-            </ThemedText>
-          </Pressable>
+          <View style={styles.headerActions}>
+            <Pressable onPress={() => router.push('/settings')} hitSlop={10} style={styles.settingsButton}>
+              <ThemedText type="default">⚙️</ThemedText>
+            </Pressable>
+            <Pressable
+              onPress={() => openBrowserAsync(DONATE_URL)}
+              style={[styles.donateButton, { backgroundColor: theme.backgroundElement, borderColor: theme.border }]}>
+              <ThemedText type="smallBold" themeColor="primary">
+                🤍 Donate
+              </ThemedText>
+            </Pressable>
+          </View>
         </View>
 
         <ThemedText type="title" style={styles.title}>
@@ -110,6 +147,14 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'space-between',
     marginTop: Spacing.two,
+  },
+  headerActions: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: Spacing.two,
+  },
+  settingsButton: {
+    padding: Spacing.one,
   },
   donateButton: {
     borderWidth: 1,
