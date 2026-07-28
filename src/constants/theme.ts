@@ -7,38 +7,47 @@ import '@/global.css';
 
 import { Platform } from 'react-native';
 
+/**
+ * Matches the PrayFit brand (prayfit.org): #2D3940 is the exact color sampled
+ * from the official logo vector (assets/brand/prayfit-logo.ai), bold condensed
+ * headlines, black-and-white/monochrome UI with a single dark charcoal-navy
+ * accent — no bright "app blue."
+ */
 export const Colors = {
   light: {
-    text: '#000000',
+    text: '#1B1F23',
     background: '#ffffff',
-    backgroundElement: '#F0F0F3',
-    backgroundSelected: '#E0E1E6',
-    textSecondary: '#60646C',
-    primary: '#208AEF',
+    backgroundElement: '#EEF0F2',
+    backgroundSelected: '#DCE1E6',
+    textSecondary: '#5B6470',
+    primary: '#2D3940',
     onPrimary: '#ffffff',
     success: '#1E9E5A',
     successBackground: '#E4F7EC',
     danger: '#D0392B',
     dangerBackground: '#FBEAE8',
-    border: '#DADCE2',
+    border: '#D7DBDF',
   },
   dark: {
-    text: '#ffffff',
-    background: '#000000',
-    backgroundElement: '#212225',
-    backgroundSelected: '#2E3135',
-    textSecondary: '#B0B4BA',
-    primary: '#4FA8FF',
-    onPrimary: '#00121F',
+    text: '#F5F6F7',
+    background: '#12151A',
+    backgroundElement: '#1E242B',
+    backgroundSelected: '#2A323B',
+    textSecondary: '#9AA3AC',
+    primary: '#8FA0AC',
+    onPrimary: '#12151A',
     success: '#3FCE85',
     successBackground: '#0F2B1D',
     danger: '#FF6B5E',
     dangerBackground: '#331311',
-    border: '#33353A',
+    border: '#2C333B',
   },
 } as const;
 
 export type ThemeColor = keyof typeof Colors.light & keyof typeof Colors.dark;
+
+/** Bold condensed display face for brand headline moments (title, streak, score) — loaded via expo-font in _layout.tsx. */
+export const DISPLAY_FONT = 'Anton_400Regular';
 
 export const Fonts = Platform.select({
   ios: {
@@ -50,18 +59,21 @@ export const Fonts = Platform.select({
     rounded: 'ui-rounded',
     /** iOS `UIFontDescriptorSystemDesignMonospaced` */
     mono: 'ui-monospace',
+    display: DISPLAY_FONT,
   },
   default: {
     sans: 'normal',
     serif: 'serif',
     rounded: 'normal',
     mono: 'monospace',
+    display: DISPLAY_FONT,
   },
   web: {
     sans: 'var(--font-display)',
     serif: 'var(--font-serif)',
     rounded: 'var(--font-rounded)',
     mono: 'var(--font-mono)',
+    display: DISPLAY_FONT,
   },
 });
 

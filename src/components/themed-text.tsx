@@ -37,9 +37,11 @@ const styles = StyleSheet.create({
     fontWeight: 500,
   },
   smallBold: {
-    fontSize: 14,
+    fontSize: 13,
     lineHeight: 20,
     fontWeight: 700,
+    textTransform: 'uppercase',
+    letterSpacing: 0.6,
   },
   default: {
     fontSize: 16,
@@ -47,9 +49,11 @@ const styles = StyleSheet.create({
     fontWeight: 500,
   },
   title: {
-    fontSize: 48,
-    fontWeight: 600,
-    lineHeight: 52,
+    fontFamily: Fonts.display,
+    fontSize: 44,
+    lineHeight: 48,
+    letterSpacing: 0.5,
+    textTransform: 'uppercase',
   },
   subtitle: {
     fontSize: 32,

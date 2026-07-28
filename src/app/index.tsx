@@ -3,6 +3,7 @@ import { useCallback, useState } from 'react';
 import { Pressable, StyleSheet } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
+import { BrandMark } from '@/components/brand-mark';
 import { ThemedText } from '@/components/themed-text';
 import { ThemedView } from '@/components/themed-view';
 import { NIV_ATTRIBUTION } from '@/constants/attribution';
@@ -29,6 +30,7 @@ export default function HomeScreen() {
   return (
     <ThemedView style={styles.container}>
       <SafeAreaView style={styles.safeArea}>
+        <BrandMark size={64} style={styles.mark} />
         <ThemedText type="title" style={styles.title}>
           PrayFit Trivia
         </ThemedText>
@@ -82,9 +84,12 @@ const styles = StyleSheet.create({
     padding: Spacing.four,
     gap: Spacing.four,
   },
+  mark: {
+    alignSelf: 'center',
+    marginTop: Spacing.four,
+  },
   title: {
     textAlign: 'center',
-    marginTop: Spacing.four,
   },
   statusCard: {
     borderRadius: 16,
