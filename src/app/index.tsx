@@ -1,6 +1,7 @@
 import { useFocusEffect, useRouter } from 'expo-router';
+import { openBrowserAsync } from 'expo-web-browser';
 import { useCallback, useState } from 'react';
-import { Pressable, StyleSheet } from 'react-native';
+import { Pressable, StyleSheet, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
 import { BrandMark } from '@/components/brand-mark';
@@ -13,6 +14,8 @@ import { useTheme } from '@/hooks/use-theme';
 import { getProgressState, summarizeProgress, type ProgressSummary } from '@/lib/bibleProgress';
 import { todayKey } from '@/lib/random';
 import { getStreakState, type StreakState } from '@/lib/streak';
+
+const DONATE_URL = 'https://www.prayfit.org/?form=donate';
 
 export default function HomeScreen() {
   const router = useRouter();
@@ -34,7 +37,17 @@ export default function HomeScreen() {
   return (
     <ThemedView style={styles.container}>
       <SafeAreaView style={styles.safeArea}>
-        <BrandMark size={64} style={styles.mark} />
+        <View style={styles.headerRow}>
+          <BrandMark size={44} />
+          <Pressable
+            onPress={() => openBrowserAsync(DONATE_URL)}
+            style={[styles.donateButton, { backgroundColor: theme.backgroundElement, borderColor: theme.border }]}>
+            <ThemedText type="smallBold" themeColor="primary">
+              🤍 Donate
+            </ThemedText>
+          </Pressable>
+        </View>
+
         <ThemedText type="title" style={styles.title}>
           PrayFit Trivia
         </ThemedText>
@@ -92,9 +105,17 @@ const styles = StyleSheet.create({
     padding: Spacing.four,
     gap: Spacing.four,
   },
-  mark: {
-    alignSelf: 'center',
-    marginTop: Spacing.four,
+  headerRow: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    marginTop: Spacing.two,
+  },
+  donateButton: {
+    borderWidth: 1,
+    borderRadius: 999,
+    paddingHorizontal: Spacing.three,
+    paddingVertical: Spacing.two,
   },
   title: {
     textAlign: 'center',
